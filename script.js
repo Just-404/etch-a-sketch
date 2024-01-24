@@ -23,8 +23,12 @@ function createRow(columnDiv, len){
     rowDiv.style.border = '2px solid gray';
     columnDiv.appendChild(rowDiv);
 
+    let brightness = 100;
+    
     rowDiv.addEventListener('mouseover', () =>{
       rowDiv.style.backgroundColor = `rgb(${getRandomNumber()},${getRandomNumber()},${getRandomNumber()})`;
+      if(brightness>0) brightness-= 10;
+      rowDiv.style.filter = `brightness(${brightness}%)`;
     });
   }
 
